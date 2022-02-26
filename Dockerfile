@@ -22,7 +22,7 @@ COPY yarn.lock /work
 RUN yarn install --frozen-lockfile && yarn cache clean
 COPY . /work
 # RUN ls -a
-RUN yarn build
+# RUN yarn build
 
 # start server
 EXPOSE 3000

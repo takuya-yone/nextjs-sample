@@ -4,7 +4,6 @@ build:
   commands:
     build:
       - yarn install
-      - yarn build
 run: 
   network:
     port: 3000
