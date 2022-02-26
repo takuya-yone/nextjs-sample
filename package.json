@@ -5,11 +5,11 @@
   "scripts": {
     "format": "prettier --write 'pages/**/*.{ts,tsx}'",
     "dev": "next dev",
-    "build": "prettier --write 'pages/**/*.{ts,tsx}' && next build",
+    "build": "yarn format && next build",
     "export": "next export",
     "start": "next start",
     "dev:server": "ts-node index.ts",
-    "prod:server": "cross-env NODE_ENV=production ts-node index.ts",
+    "prod:server": "yarn build && cross-env NODE_ENV=production ts-node index.ts",
     "lint": "next lint"
   },
   "dependencies": {
