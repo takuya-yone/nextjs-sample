@@ -8,6 +8,8 @@
     "build": "prettier --write 'pages/**/*.{ts,tsx}' && next build",
     "export": "next export",
     "start": "next start",
+    "dev:server": "node server.js",
+    "prod:server": "cross-env NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {

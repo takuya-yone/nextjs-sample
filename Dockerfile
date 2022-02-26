@@ -19,7 +19,7 @@ RUN mkdir -p /work
 WORKDIR /work
 COPY package.json /work
 COPY yarn.lock /work
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile && yarn cache clean
 COPY . /work
 # RUN ls -a
 RUN yarn build
@@ -27,7 +27,7 @@ RUN yarn build
 # start server
 EXPOSE 3000
 # ENTRYPOINT yarn start
-ENTRYPOINT yarn start
+ENTRYPOINT yarn prod:server
 
 
 ############### Nginx ###############
