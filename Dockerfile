@@ -1,7 +1,7 @@
 ############### SSG BUILD ###############
 
-# FROM node:16.12.0-alpine as builder
-FROM node:16.12.0-alpine
+# FROM node:17.6.0-alpine as builder
+FROM node:17.6.0-alpine
 
 # install nodemodules
 # COPY ./package.json ./
