@@ -8,8 +8,8 @@
     "build": "prettier --write 'pages/**/*.{ts,tsx}' && next build",
     "export": "next export",
     "start": "next start",
-    "dev:server": "node server.js",
-    "prod:server": "cross-env NODE_ENV=production node server.js",
+    "dev:server": "ts-node index.ts",
+    "prod:server": "cross-env NODE_ENV=production ts-node index.ts",
     "lint": "next lint"
   },
   "dependencies": {
@@ -23,11 +23,14 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/node": "17.0.21",
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/node": "^17.0.21",
     "@types/react": "17.0.39",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
     "prettier": "2.5.1",
-    "typescript": "4.5.5"
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
   }
 }

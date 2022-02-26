@@ -1,9 +1,11 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const session = require('express-session')
-const next = require('next')
+import express, { Application, Request, Response } from 'express'
 
-const port = parseInt(process.env.PORT, 10) || 3000
+import bodyParser from 'body-parser'
+import session  from 'express-session'
+import next from 'next'
+
+
+const port = 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -32,19 +34,21 @@ app.prepare().then(() => {
   const server = express()
   server.use(log4js.connectLogger(accessLogger));
   server.use(bodyParser.json())
-  server.use(session({
-    secret: 'zZAai8301bSnuA8sabUwabxe3',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 60000 }
-  }))
 
   server.all('*', (req, res) => {
     return handle(req, res)
   })
 
-  server.listen(port, err => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
-  })
+  try {
+    server.listen(port, () => {
+      console.log('server is running!!!')
+    })
+  } catch (e) {
+    if (e instanceof Error) {
+      console.error(e.message)
+    }
+  }
+
+
+
 })
