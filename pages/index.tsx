@@ -16,7 +16,9 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js - Index!</a>
         </h1>
-
+        <p className={styles.description}>
+          APIHOST: {process.env.NEXT_PUBLIC_APIHOST}
+        </p>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>

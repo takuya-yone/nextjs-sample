@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "yarn format && next build",
     "export": "next export",
-    "start": "next start",
-    "dev:server": "ts-node index.ts",
+    "start": "yarn build && next start",
+    "dev:server": "yarn build && cross-env NODE_ENV=development ts-node index.ts",
     "prod:server": "yarn build && cross-env NODE_ENV=production ts-node index.ts",
     "lint": "next lint"
   },
