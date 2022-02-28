@@ -8,5 +8,5 @@ services:
       - '3000:3000'
       # - "3000:80"
     environment:
-      - TESTENV='HELLO!ENV!'
+      - NEXT_PUBLIC_APIHOST=http://production
     image: takuyayone/nextjs-sample:1.0.0

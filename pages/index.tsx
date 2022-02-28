@@ -3,6 +3,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
+const APIHOST = process.env.NEXT_PUBLIC_APIHOST
+  ? process.env.NEXT_PUBLIC_APIHOST
+  : 'undefined..';
+  const APICONFIG = process.env.NEXT_PUBLIC_APICONFIG
+  ? process.env.NEXT_PUBLIC_APICONFIG
+  : 'undefined..';
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -16,9 +22,9 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js - Index!</a>
         </h1>
-        <p className={styles.description}>
-          APIHOST: {process.env.NEXT_PUBLIC_APIHOST}
-        </p>
+        <p className={styles.description}>APIHOST: {APIHOST}</p>
+        <p className={styles.description}>APICONFIG: {APICONFIG}</p>
+
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
