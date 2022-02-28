@@ -3,10 +3,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-const APIHOST = process.env.NEXT_PUBLIC_APIHOST
+const APIHOST: string = process.env.NEXT_PUBLIC_APIHOST
   ? process.env.NEXT_PUBLIC_APIHOST
   : 'undefined..';
-  const APICONFIG = process.env.NEXT_PUBLIC_APICONFIG
+const APICONFIG: string = process.env.NEXT_PUBLIC_APICONFIG
   ? process.env.NEXT_PUBLIC_APICONFIG
   : 'undefined..';
 const Home: NextPage = () => {
