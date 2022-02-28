@@ -8,5 +8,16 @@ services:
       - '3000:3000'
       # - "3000:80"
     environment:
-      - NEXT_PUBLIC_APIHOST=http://production
+      - NEXT_PUBLIC_APIHOST=fastapi:4000
     image: takuyayone/nextjs-sample:1.0.0
+
+  # fastapi:
+  #   # build: ./
+  #   # container_name: nextjs-container
+  #   # image: nextjs-container:1.0.0
+  #   ports:
+  #     - '4000:4000'
+  #     # - "3000:80"
+  #   # environment:
+  #   #   - NEXT_PUBLIC_APIHOST=http://production
+  #   image: takuyayone/fastapi-sample:1.0.0
