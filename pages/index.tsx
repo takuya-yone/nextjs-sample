@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 
 const APIHOST: string = process.env.NEXT_PUBLIC_APIHOST
   ? process.env.NEXT_PUBLIC_APIHOST
@@ -25,10 +25,14 @@ const Home: NextPage = () => {
           </a>
         </h1>
 
-        <p className='rounded-md bg-gray-100 p-3 font-mono text-lg'>APIHOST: {APIHOST}</p>
-        <p className='rounded-md bg-gray-100 p-3 font-mono text-lg'>APICONFIG: {APICONFIG}</p>
+        <p className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
+          APIHOST: {APIHOST}
+        </p>
+        <p className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
+          APICONFIG: {APICONFIG}
+        </p>
 
-        <p className="mt-3 text-2xl">
+        <p className="mt-6 text-2xl">
           Get started by editing{' '}
           <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
             pages/index.tsx
@@ -90,7 +94,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
