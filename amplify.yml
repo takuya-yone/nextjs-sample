@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install v16.12.0  
+        - nvm use v16.12.0  
+        - curl -o- -L https://yarnpkg.com/install.sh | bash #安定版を再インストール
+    build:
+      commands:
+        - yarn install
+        - yarn run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
