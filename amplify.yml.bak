@@ -9,7 +9,7 @@ frontend:
     build:
       commands:
         - yarn install
-        - yarn run build
+        - yarn build
   artifacts:
     baseDirectory: .next
     files:
