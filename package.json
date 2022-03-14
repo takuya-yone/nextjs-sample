@@ -13,6 +13,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "body-parser": "^1.19.2",
     "cross-env": "^7.0.3",
     "express": "^4.17.3",
