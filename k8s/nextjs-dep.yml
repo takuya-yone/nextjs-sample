@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nextjs-dep
+  name: nextjs-dep
+  namespace: sandbox
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nextjs-dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nextjs-dep
+    spec:
+      containers:
+      - image: takuyayone/nextjs-sample:1.0.0
+        name: nextjs-sample
+        resources: {}
+        env:
+        - name: NEXT_PUBLIC_APIHOST
+          value: fastapi-nodeport:4000
+status: {}
