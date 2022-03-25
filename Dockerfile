@@ -14,6 +14,7 @@ RUN yarn prod:build
 EXPOSE 3000
 # ENTRYPOINT yarn start
 ENTRYPOINT yarn prod:server
+# ENTRYPOINT yarn dev
 
 
 ############### Nginx ###############
