@@ -7,8 +7,8 @@ services:
     ports:
       - '3000:3000'
       # - "3000:80"
-    environment:
-      - NEXT_PUBLIC_APIHOST=fastapi:4000
+    # environment:
+      # - NEXT_PUBLIC_APIHOST=fastapi:4000
     image: takuyayone/nextjs-sample:1.0.0
 
   # fastapi:

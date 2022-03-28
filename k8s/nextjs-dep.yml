@@ -23,7 +23,7 @@ spec:
         resources: {}
         env:
         - name: NEXT_PUBLIC_APIHOST
-          value: fastapi-nodeport:4000
+          value: fastapi-service:4000
         livenessProbe:
           failureThreshold: 3
           periodSeconds: 30
