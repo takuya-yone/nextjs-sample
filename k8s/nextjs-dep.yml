@@ -5,9 +5,8 @@ metadata:
   labels:
     app: nextjs-dep
   name: nextjs-dep
-  namespace: sandbox
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: nextjs-dep
@@ -25,4 +24,18 @@ spec:
         env:
         - name: NEXT_PUBLIC_APIHOST
           value: fastapi-nodeport:4000
+        livenessProbe:
+          failureThreshold: 3
+          periodSeconds: 30
+          initialDelaySeconds: 30
+          httpGet:
+            path: /
+            port: 3000
+        readinessProbe:
+          failureThreshold: 3
+          periodSeconds: 30
+          initialDelaySeconds: 30
+          httpGet:
+            path: /
+            port: 3000
 status: {}

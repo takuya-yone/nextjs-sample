@@ -5,7 +5,6 @@ metadata:
   labels:
     app: nextjs-nodeport
   name: nextjs-nodeport
-  namespace: sandbox
 spec:
   ports:
   - name: "3000"
