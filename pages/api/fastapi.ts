@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   await axios
-    .get(`http://${process.env.NEXT_PUBLIC_APIHOST}/`)
+    .get(`http://${process.env.NEXT_PUBLIC_APIHOST_FASTAPI}/`)
     // thenで成功した場合の処理をかける
     .then((response) => {
       // console.log('status:', response.status); // 200

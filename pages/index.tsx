@@ -2,9 +2,14 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
-const APIHOST: string = process.env.NEXT_PUBLIC_APIHOST
-  ? process.env.NEXT_PUBLIC_APIHOST
+const APIHOST_FASTAPI: string = process.env.NEXT_PUBLIC_APIHOST_FASTAPI
+  ? process.env.NEXT_PUBLIC_APIHOST_FASTAPI
   : 'undefined..';
+
+const APIHOST_GOLANG: string = process.env.NEXT_PUBLIC_APIHOST_GOLANG
+  ? process.env.NEXT_PUBLIC_APIHOST_GOLANG
+  : 'undefined..';
+
 const APICONFIG: string = process.env.NEXT_PUBLIC_APICONFIG
   ? process.env.NEXT_PUBLIC_APICONFIG
   : 'undefined..';
@@ -24,21 +29,21 @@ const Home: NextPage = () => {
             Next.js! - Index
           </a>
         </h1>
-
         <p className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
-          APIHOST: {APIHOST}
+          APIHOST_FASTAPI: {APIHOST_FASTAPI}
+        </p>{' '}
+        <p className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
+          APIHOST_GOLANG: {APIHOST_GOLANG}
         </p>
         <p className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
           APICONFIG: {APICONFIG}
         </p>
-
         <p className="mt-6 text-2xl">
           Get started by editing{' '}
           <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
             pages/index.tsx
           </code>
         </p>
-
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a
             href="https://nextjs.org/docs"
