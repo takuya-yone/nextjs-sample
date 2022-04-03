@@ -11,6 +11,8 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const APIHOST_FASTAPI: string = process.env.NEXT_PUBLIC_APIHOST_FASTAPI
   ? process.env.NEXT_PUBLIC_APIHOST_FASTAPI
@@ -48,8 +50,8 @@ const Home: NextPage = () => {
 
         <AppBar position="sticky">
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Typography className="font-mono">Index</Typography>
+            <Typography className="font-mono px-2" sx={{ flexGrow: 1 }}>
+              Index
             </Typography>
             <Button
               onClick={() => signIn()}
@@ -57,7 +59,8 @@ const Home: NextPage = () => {
               variant="outlined"
               sx={{ my: 1, mx: 1 }}
             >
-              <Typography className="font-mono">Login</Typography>
+              <LoginIcon />
+              <Typography className="font-mono px-2">Login</Typography>
             </Button>
             <Button
               onClick={() => signOut()}
@@ -65,7 +68,9 @@ const Home: NextPage = () => {
               variant="outlined"
               sx={{ my: 1, mx: 1 }}
             >
-              <Typography className="font-mono">Logout</Typography>
+              <LogoutIcon />
+
+              <Typography className="font-mono px-2">Logout</Typography>
             </Button>
           </Toolbar>
         </AppBar>
