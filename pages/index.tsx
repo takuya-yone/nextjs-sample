@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { getCsrfToken, useSession, signIn, signOut } from 'next-auth/react';
+
 
 const APIHOST_FASTAPI: string = process.env.NEXT_PUBLIC_APIHOST_FASTAPI
   ? process.env.NEXT_PUBLIC_APIHOST_FASTAPI
@@ -15,6 +17,10 @@ const APICONFIG: string = process.env.NEXT_PUBLIC_APICONFIG
   : 'undefined..';
 
 const Home: NextPage = () => {
+  const { data: session, status } = useSession();
+  console.log(session);
+  console.log(status);
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -38,12 +44,14 @@ const Home: NextPage = () => {
         <p className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
           APICONFIG: {APICONFIG}
         </p>
-        <p className="mt-6 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
+        <p onClick={() => signIn()} className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
+        KeyCloak Login
         </p>
+
+        <p onClick={() => signOut()} className="mt-6 rounded-md bg-gray-100 p-3 font-mono text-lg">
+        KeyCloak SignOut
+        </p>
+
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a
             href="https://nextjs.org/docs"
