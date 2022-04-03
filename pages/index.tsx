@@ -70,8 +70,8 @@ const Home: NextPage = () => {
           </Toolbar>
         </AppBar>
 
-        <main className="flex w-full flex-1 flex-col items-center font-mono justify-center px-20 text-center py-5">
-          <h1 className="text-6xl font-mono py-5">
+        <main className="flex w-full flex-1  flex-col items-center font-mono justify-center px-20 text-center py-5">
+          <h1 className="text-6xl font-mono  py-5">
             Welcome to{' '}
             <a className="text-blue-600" href="https://nextjs.org">
               Next.js! - Index
