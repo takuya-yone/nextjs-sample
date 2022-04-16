@@ -1,7 +1,7 @@
 ############### SSG BUILD ###############
 
 # FROM node:17.6.0-alpine as builder
-FROM node:17.6.0-alpine
+FROM node:16.13.0-alpine
 
 
 RUN mkdir -p /work
