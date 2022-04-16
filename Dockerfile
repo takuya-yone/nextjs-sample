@@ -8,7 +8,7 @@ RUN mkdir -p /work
 WORKDIR /work
 COPY . /work
 
-RUN yarn install --frozen-lockfile && yarn cache clean
+RUN rm -rf node_modules && yarn install --frozen-lockfile && yarn cache clean
 RUN yarn prod:build
 # start server
 EXPOSE 3000
