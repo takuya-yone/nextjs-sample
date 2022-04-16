@@ -10,4 +10,5 @@ export default NextAuth({
       issuer: 'http://localhost:8080/auth/realms/nextjs',
     }),
   ],
+  secret: process.env.NEXT_PUBLIC_SECRET,
 });
