@@ -1,14 +1,14 @@
 ############### SSG BUILD ###############
 
 # FROM node:17.6.0-alpine as builder
-FROM node:17.6.0-alpine
+FROM node:16.13.0-alpine
 
 
 RUN mkdir -p /work
 WORKDIR /work
 COPY . /work
 
-RUN yarn install --frozen-lockfile && yarn cache clean
+RUN rm -rf node_modules && yarn install --frozen-lockfile && yarn cache clean
 RUN yarn prod:build
 # start server
 EXPOSE 3000
