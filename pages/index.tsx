@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         <AppBar position="sticky">
           <Toolbar>
             <Typography className="font-mono px-2" sx={{ flexGrow: 1 }}>
-              Index
+              Index - 2022/05/01
             </Typography>
             <Button
               onClick={() => signIn()}
