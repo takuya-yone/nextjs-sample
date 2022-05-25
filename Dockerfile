@@ -13,7 +13,7 @@ RUN yarn prod:build
 # start server
 EXPOSE 3000
 # ENTRYPOINT yarn start
-ENTRYPOINT yarn prod:server
+ENTRYPOINT ["yarn","prod:server"]
 # ENTRYPOINT yarn dev
 
 
